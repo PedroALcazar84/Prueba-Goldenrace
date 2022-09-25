@@ -1,0 +1,39 @@
+<!-- Displaying the title of the page. -->
+<h1>{{title}}</h1>
+<!-- The HTML template for the form. -->
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="grid-container">
+      <div class="form-group grid-item">
+        <label>Product Name</label>
+        <input type="text" formControlName="productName" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['productName'].errors }" />
+        <div *ngIf="submitted && f['productName'].errors" class="invalid-feedback">
+<!-- This is a conditional statement that checks if the form control has an error. If it does, it will display the error message. -->
+          <p class="alert" *ngIf="f['productName'].errors['required']">Product Name is required</p>
+          <p class="alert" *ngIf="f['productName'].errors['minlength']">Product Name must be at least 5 characters</p>
+          <p class="alert" *ngIf="f['productName'].errors['maxlength']">Product Name must not exceed 20 characters</p>
+        </div>
+      </div>
+      <div class="form-group grid-item">
+        <label>Price</label>
+        <input type="text" formControlName="price" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['price'].errors }" />
+        <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
+<!-- This is a conditional statement that checks if the form control has an error. If it does, it will display the error message. -->
+          <p class="alert" *ngIf="f['price'].errors['required']">Price is required</p>
+          <p class="alert" *ngIf="f['price'].errors['pattern']">Price must be a number</p>
+          <p class="alert" *ngIf="f['price'].errors['min']">Price must be a number greater than 5</p>
+          <p class="alert" *ngIf="f['price'].errors['max']">Price must be a number less than 20</p>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="validated">The product: {{form.value.productName}} <br> with the price: {{form.value.price}}<br> has been
+      successfully validated</p>
+    <div class="form-group">
+<!-- This is the submit and reset button. The submit button is disabled if the form is validated. The reset button will reset the form. -->
+      <button type="submit" class="btn btn-primary" [disabled]="validated">Submit</button>
+      <button type="button" (click)="onReset()" class="btn btn-warning float-right">Reset</button>
+    </div>
+  </form>
+</div>

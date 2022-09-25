@@ -1,0 +1,122 @@
+/* A variable that is used in the SCSS code. */
+$textcolor: #fff;
+
+/* Centering the form in the middle of the page. */
+.register-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+
+  /* The styling for the form. */
+  form {
+    width: 40%;
+    padding: 10px 40px 40px 40px;
+    max-width: 500px;
+    box-shadow: 1px 0 10px 15px rgba(0, 0, 0, .3);
+    background-color: #fff;
+
+    /* Styling the form group. */
+    .form-group {
+      display: grid;
+      gap: 15px;
+      padding-top: 10%;
+    }
+
+    /* Styling the label. */
+    label {
+      font-family: Arial;
+      font-size: 18px;
+    }
+
+    /* Styling the input fields. */
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      background-color: #ecf0f1;
+      padding: 10px;
+      line-height: 2;
+      font-family: Arial;
+      font-size: 16px;
+    }
+
+    /* Styling the button.btn-primary */
+    button.btn-primary {
+      background-color: #d4d234;
+      color: $textcolor;
+      font-size: 18px;
+      width: 100%;
+      outline: none;
+      border: none;
+      padding: 15px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #c9e0a4;
+      }
+
+      &:disabled {
+        background-color: #c7cac9;
+      }
+    }
+
+    /* Styling the button. */
+    button {
+      background-color: #4834d4;
+      color: $textcolor;
+      font-size: 18px;
+      width: 100%;
+      outline: none;
+      border: none;
+      padding: 15px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #686de0;
+      }
+    }
+
+    /* Styling the paragraph tag. */
+    p.alert {
+      color: red;
+      text-align: center;
+      margin-bottom: -30px;
+      font-size: 19px;
+    }
+
+    p {
+      color: green;
+      text-align: center;
+      margin-bottom: -30px;
+      font-size: 19px;
+    }
+  }
+}
+
+/* A media query that is used to change the width of the form when the screen is 700px or less. */
+@media(max-width:700px) {
+  .center-item {
+    form {
+      width: 65%;
+    }
+  }
+}
+
+/* A media query that is used to change the width of the form when the screen is 450px or less. */
+@media(max-width:450px) {
+  .center-item {
+    form {
+      width: 70%;
+      padding: 25px;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

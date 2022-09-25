@@ -1,0 +1,21 @@
+<!-- The HTML for the app component. -->
+<h1>{{title}}</h1>
+
+<!-- Creating the navigation bar. -->
+<div class="center">
+    <div class="btn-b">
+        <a routerLink="/lazy"><span>Lazy</span></a>
+    </div>
+    <div class="btn-b">
+        <a routerLink="/secure"><span>Secure</span></a>
+    </div>
+    <div class="btn-h">
+        <a routerLink=""><span>Home</span></a>
+    </div>
+</div>
+<div class="center">
+    <!-- This is where the router will display the component that is routed to. -->
+    <p>
+        <router-outlet></router-outlet>
+    </p>
+</div>
